@@ -1,9 +1,8 @@
-
 const categoryList = {
-    items: document.querySelectorAll('.category-list__item'),
 
+    items: document.querySelectorAll('.category-list__item'),
     init() {
-        if (!this.items.length) return
+        if (!this.items.length) return;
         this.items.forEach(item => {
             item.addEventListener('click', (e) => {
                 e.preventDefault()
@@ -14,8 +13,7 @@ const categoryList = {
             })
         })
     }
-}
-
+};
 
 
 
@@ -72,7 +70,6 @@ const priceRange = {
             this.input.value =
                 Math.round(values[1]) + ' грн';
         });
-<<<<<<< HEAD
     }
 };
 
@@ -104,95 +101,6 @@ const priceRange = {
 
 
 // productRating.init();
-<<<<<<< HEAD
-
-
-
-const quantityCounter = {
-    input: document.querySelector('.quantity__input'),
-    plusBtn: document.querySelector('.quantity__btn--plus'),
-    minusBtn: document.querySelector('.quantity__btn--minus'),
-
-    init() {
-        if (!this.input ||
-            !this.plusBtn ||
-            !this.minusBtn) return
-        this.plusBtn.addEventListener('click', () => {
-            this.input.value =
-                +this.input.value + 1
-        });
-
-        this.minusBtn.addEventListener('click', () => {
-            if (+this.input.value > 1) {
-                this.input.value =
-                    +this.input.value - 1
-            }
-        })
-    }
-}
-
-
-
-
-const checkoutTabs = {
-    items: document.querySelectorAll('.checkout-tabs__btn'),
-
-    init() {
-        if (!this.items.length) return;
-        this.items.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.items.forEach(el => {
-                    el.classList.remove('active');
-                });
-                item.classList.add('active');
-            });
-
-        });
-
-=======
->>>>>>> parent of 93b460b (Merge branch 'catalog')
-    }
-};
-
-<<<<<<< HEAD
-};
-
-
-checkoutTabs.init();
-quantityCounter.init()
-=======
-// const productRating = {
-
-//     ratings: document.querySelectorAll('.rating-stars'),
-
-//     init() {
-
-//         this.ratings.forEach(rating => {
-
-//             const stars =
-//                 rating.querySelectorAll('span');
-
-//             stars.forEach((star, index) => {
-
-//                 star.addEventListener('click', () => {
-
-//                     rating.dataset.rating = index + 1;
-
-//                 });
-
-//             });
-
-//         });
-
-//     }
-// };
-
-
-// productRating.init();
->>>>>>> parent of 93b460b (Merge branch 'catalog')
-=======
->>>>>>> parent of a6c54e6 (Merge branch 'order')
 subcategories.init();
 categoryList.init();
 filterGroup.init();
