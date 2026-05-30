@@ -413,10 +413,32 @@ const registrationPopup = {
     }
 };
 
-// Вызовы для твоего скрипта
+
+
+const checkoutTabs = {
+    items: document.querySelectorAll('.checkout-tabs__btn'),
+
+    init() {
+        if (!this.items.length) return;
+        this.items.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.items.forEach(el => {
+                    el.classList.remove('active');
+                });
+                item.classList.add('active');
+            });
+
+        });
+
+    }
+
+};
+
+
 authPopup.init();
 registrationPopup.init();
-
+checkoutTabs.init();
 authPopup.init();
 reviewPopup.init();
 quickOrderPopup.init();
