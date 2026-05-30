@@ -3366,13 +3366,27 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
   line-height: 1;
 }
 .productPage .productTabs__content {
+  position: relative;
   padding-top: 35px;
 }
 .productPage .productTabs__panel {
   display: none;
+  opacity: 0;
+  transform: translateY(10px);
 }
 .productPage .productTabs__panel.active {
   display: block;
+  animation: tabFade 0.3s ease forwards;
+}
+@keyframes tabFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .productPage .productTabs__title {
   margin-bottom: 25px;
@@ -3587,10 +3601,30 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
   gap: 30px;
 }
 
-.reviews-list {
+.reviews-page {
+  display: none;
+}
+.reviews-page.active {
   display: flex;
-  gap: 25px;
   flex-direction: column;
+  gap: 25px;
+  animation: fade 0.3s ease;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reviews-page.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .review-card {
@@ -3685,16 +3719,26 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
   gap: 8px;
 }
 .reviews-pagination__button {
-  width: 30px;
-  height: 30px;
+  width: 18px;
+  height: 18px;
+  padding: 16.5px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   border: 1px solid var(--color-grey-150);
-  background: white;
+  background: #fff;
   cursor: pointer;
 }
 .reviews-pagination__button.active {
   background: var(--color-red);
   color: white;
   border-color: var(--color-red);
+}
+.reviews-pagination__button.left {
+  background: url(../assets/arrow-left.svg) no-repeat center;
+}
+.reviews-pagination__button.right {
+  background: url(../assets/arrow-right.svg) no-repeat center;
 }
 
 @media (max-width: 1275px) {
@@ -4516,7 +4560,7 @@ body.no-scroll {
 .popup--registration .popup__content {
   max-width: 680px;
   width: 100%;
-  max-height: 100%;
+  max-height: 90vh;
   overflow-y: auto;
   background-color: var(--color-white);
   padding: 63px 88px;

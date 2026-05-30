@@ -71,7 +71,6 @@ const priceRange = {
     }
 };
 
-
 const productGallery = {
     thumbnails: document.querySelector('.productGallery__thumbnails'),
     main: document.querySelector('.productGallery__main'),
@@ -122,29 +121,80 @@ const quantityCounter = {
     }
 }
 
-
-
-
 const productTabs = {
-    items: document.querySelectorAll('.productTabs__btn'),
+    buttons: document.querySelectorAll('.productTabs__btn'),
+    panels: document.querySelectorAll('.productTabs__panel'),
 
     init() {
-        if (!this.items.length) return;
-        this.items.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault()
-                this.items.forEach(el => {
-                    el.classList.remove('active')
+
+        if (!this.buttons.length) return;
+
+        this.buttons.forEach((button, index) => {
+
+            button.addEventListener('click', () => {
+
+                this.buttons.forEach(btn => {
+                    btn.classList.remove('active');
                 });
-                item.classList.add('active')
-            })
-        })
+
+                this.panels.forEach(panel => {
+                    panel.classList.remove('active');
+                });
+
+                button.classList.add('active');
+                this.panels[index].classList.add('active');
+
+            });
+
+        });
+
     }
 };
 
+const reviewsPagination = {
+    pages: document.querySelectorAll('.reviews-page'),
+    buttons: document.querySelectorAll('.reviews-pagination__button'),
+    currentPage: 0,
 
+    init() {
+        if (!this.pages.length) return;
+        this.prevBtn = this.buttons[0];
+        this.nextBtn = this.buttons[this.buttons.length - 1];
+        this.numberButtons = [...this.buttons].slice(1, -1);
+        this.numberButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                this.showPage(index);
+            });
 
+        });
 
+        this.prevBtn.addEventListener('click', () => {
+            if (this.currentPage > 0) {
+                this.showPage(this.currentPage - 1);
+            }
+        });
+
+        this.nextBtn.addEventListener('click', () => {
+            if (this.currentPage < this.pages.length - 1) {
+                this.showPage(this.currentPage + 1);
+            }
+        });
+    },
+
+    showPage(index) {
+        this.currentPage = index;
+        this.pages.forEach(page => {
+            page.classList.remove('active');
+        });
+
+        this.numberButtons.forEach(button => {
+            button.classList.remove('active');
+        });
+
+        this.pages[index].classList.add('active');
+        this.numberButtons[index].classList.add('active');
+    }
+};
 
 const cart = {
     element: document.querySelector('#cartPopup'),
@@ -189,10 +239,6 @@ const cart = {
     }
 };
 
-
-
-
-
 const quickOrderPopup = {
     openBtns: document.querySelectorAll('.productPage__quickOrder'),
     popup: document.getElementById('quickOrderPopup'),
@@ -230,9 +276,6 @@ const quickOrderPopup = {
     }
 };
 
-
-
-
 const reviewPopup = {
     popup: document.querySelector('#reviewPopup'),
     openButtons: document.querySelectorAll('.reviews-summary__button'),
@@ -251,40 +294,28 @@ const reviewPopup = {
         this.openButtons.forEach(button => {
             button.addEventListener('click', (e) => {
                 e.preventDefault();
-
                 this.open();
             });
         });
 
-        this.closeBtn.addEventListener('click', () => {
-            this.close();
-        });
+        this.closeBtn.addEventListener('click', () => this.close());
 
-        this.bg.addEventListener('click', () => {
-            this.close();
-        });
+        this.bg.addEventListener('click', () => this.close());
 
         document.addEventListener('keydown', (e) => {
-
-            if (e.key === 'Escape') {
+            if (e.key === 'Escape' && this.popup.classList.contains('active')) {
                 this.close();
             }
-
         });
 
         this.stars.forEach((star, index) => {
-
             star.addEventListener('click', () => {
-
                 const rating = index + 1;
 
-                this.starsWrapper.setAttribute('data-rating', rating);
+                this.starsWrapper.dataset.rating = rating;
                 this.ratingInput.value = rating;
-
             });
-
         });
-
     },
 
     open() {
@@ -297,9 +328,6 @@ const reviewPopup = {
         document.body.style.overflow = '';
     }
 };
-
-
-
 
 const authPopup = {
     popup: document.querySelector('.popup-auth'),
@@ -413,15 +441,16 @@ const registrationPopup = {
     }
 };
 
-// Вызовы для твоего скрипта
 authPopup.init();
 registrationPopup.init();
-
 authPopup.init();
 reviewPopup.init();
 quickOrderPopup.init();
 cart.init();
 productTabs.init()
+reviewsPagination.init()
+// product page
+
 quantityCounter.init();
 productGallery.init();
 subcategories.init();

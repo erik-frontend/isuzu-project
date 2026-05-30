@@ -526,14 +526,30 @@
         }
 
         &__content {
+            position: relative;
             padding-top: 35px;
         }
 
         &__panel {
             display: none;
+            opacity: 0;
+            transform: translateY(10px);
 
             &.active {
                 display: block;
+                animation: tabFade .3s ease forwards;
+            }
+        }
+
+        @keyframes tabFade {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -840,10 +856,33 @@
     gap: 30px;
 }
 
-.reviews-list {
+.reviews-page {
+    display: none;
+
+    &.active {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        animation: fade .3s ease;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+.reviews-page.active {
     display: flex;
-    gap: 25px;
-    flex-direction: column;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .review-card {
@@ -958,13 +997,14 @@
     gap: 8px;
 
     &__button {
-        width: 30px;
-        height: 30px;
-
+        width: 18px;
+        height: 18px;
+        padding: 16.5px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
         border: 1px solid var(--color-grey-150);
-
-        background: white;
-
+        background: #fff;
         cursor: pointer;
 
         &.active {
@@ -973,6 +1013,14 @@
             color: white;
 
             border-color: var(--color-red);
+        }
+
+        &.left {
+            background: url(../assets/arrow-left.svg) no-repeat center;
+        }
+
+        &.right {
+            background: url(../assets/arrow-right.svg) no-repeat center;
         }
     }
 }
@@ -987,6 +1035,7 @@
 
     .reviews-summary {
         max-width: 100%;
+
         &__card {
             max-width: 400px;
         }
@@ -1977,7 +2026,7 @@ body.no-scroll {
     .popup__content {
         max-width: 680px;
         width: 100%;
-        max-height: 100%;
+        max-height: 90vh;
         overflow-y: auto;
         background-color: var(--color-white);
         padding: 63px 88px;
