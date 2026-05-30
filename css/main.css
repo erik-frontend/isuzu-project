@@ -6472,6 +6472,74 @@ input:checked + .checkout-radio__box::after {
     font-size: 13px;
   }
 }
+.error {
+  padding: 0 0 213px 0;
+}
+.error-block {
+  border-radius: 10px;
+  max-width: 929px;
+  width: 100%;
+  height: 702px;
+  margin: 0 auto;
+  background: #f4f7f8;
+  text-align: center;
+}
+.error-block__img {
+  margin-bottom: 44px;
+  padding-top: 144px;
+}
+.error-block__img img {
+  width: 576px;
+}
+@media (max-width: 750px) {
+  .error-block__img img {
+    width: 288px;
+  }
+}
+.error-block__text {
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+}
+.error-block__h3 {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 111%;
+  text-align: center;
+  color: #010101;
+  margin-bottom: 10px;
+}
+@media (max-width: 450px) {
+  .error-block__h3 {
+    font-size: 32px;
+  }
+}
+.error-block__p {
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  color: #202020;
+  margin-bottom: 25px;
+}
+@media (max-width: 450px) {
+  .error-block__p {
+    font-size: 20px;
+  }
+}
+.error-block__button {
+  background: var(--color-red);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 14px 20px;
+  width: 264px;
+  height: 45px;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+}
+
 .footer {
   position: relative;
   background: var(--color-BlackRed);
