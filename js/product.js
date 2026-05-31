@@ -1,3 +1,5 @@
+
+
 const productGallery = {
     thumbnails: document.querySelector('.productGallery__thumbnails'),
     main: document.querySelector('.productGallery__main'),
