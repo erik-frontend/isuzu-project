@@ -2862,7 +2862,14 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
     transition: 0.2 linear;
 }
 
+.grey-bg {
+    background: var(--color-grey-200);
+    padding: 70px 0;
+}
 
+.catalog-layout {
+    padding-bottom: 54px;
+}
 
 
 .catalog-layout__sidebar {
@@ -3037,8 +3044,12 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
 
     &.filters {
         border-bottom: 1px solid var(--color-grey-150);
-
     }
+
+    &.price {
+        padding-bottom: 25px;
+    }
+
 
     &__body {
         display: none;
@@ -3253,15 +3264,6 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
 
 
 
-
-
-
-
-
-
-
-
-
 .catalog-breadcrumbs {
     margin: 34px 0 10px;
 
@@ -3313,18 +3315,12 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
     max-width: 1050px;
     width: 100%;
 
-    @media (max-width: 950px) {
-        max-width: 900px;
-
-    }
-
-
     .load-more-btn {
         display: flex;
         width: 160px;
         gap: 5px;
         padding: 8px 19px;
-        margin: 39px auto 54px;
+        margin: 39px auto 0;
         align-items: center;
         cursor: pointer;
         border-radius: 5px;
@@ -3355,12 +3351,6 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
     &__list {
         display: flex;
         gap: 20px;
-
-
-        @media (max-width: 1330px) {
-            flex-wrap: wrap;
-        }
-
     }
 
     &__item {
@@ -3458,13 +3448,6 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-
-    @media(max-width: 1150px) {
-        grid-template-columns:
-            repeat(auto-fit, minmax(280px, 1fr));
-
-        gap: 30px;
-    }
 }
 
 
@@ -3656,5 +3639,45 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
             height: 14px;
             background: url("../assets/cart.svg") center / contain no-repeat;
         }
+    }
+}
+
+
+.catalog-layout {
+    display: flex;
+    gap: 30px;
+
+    @media (max-width: 1100px) {
+        flex-direction: column;
+    }
+}
+
+.catalog-sidebar {
+    max-width: 330px;
+    width: 100%;
+    flex-shrink: 0;
+
+    @media (max-width: 1100px) {
+        max-width: 100%;
+    }
+}
+
+.catalog-layout__content {
+    max-width: none;
+    width: 100%;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @media (max-width: 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 700px) {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
