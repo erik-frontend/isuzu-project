@@ -19,27 +19,32 @@ const checkoutTabs = {
 };
 
 const quantityCounter = {
-    input: document.querySelector('.quantity__input'),
-    plusBtn: document.querySelector('.quantity__btn--plus'),
-    minusBtn: document.querySelector('.quantity__btn--minus'),
+    items: document.querySelectorAll('.quantity'),
 
     init() {
-        if (!this.input ||
-            !this.plusBtn ||
-            !this.minusBtn) return
-        this.plusBtn.addEventListener('click', () => {
-            this.input.value =
-                +this.input.value + 1
+
+        if (!this.items.length) return;
+
+        this.items.forEach(item => {
+
+            const input = item.querySelector('.quantity__input');
+            const plusBtn = item.querySelector('.quantity__btn--plus');
+            const minusBtn = item.querySelector('.quantity__btn--minus');
+
+            plusBtn.addEventListener('click', () => {
+                input.value = +input.value + 1;
+            });
+
+            minusBtn.addEventListener('click', () => {
+                if (+input.value > 1) {
+                    input.value = +input.value - 1;
+                }
+            });
+
         });
 
-        this.minusBtn.addEventListener('click', () => {
-            if (+this.input.value > 1) {
-                this.input.value =
-                    +this.input.value - 1
-            }
-        })
     }
-}
+};
 
 checkoutTabs.init();
 quantityCounter.init();

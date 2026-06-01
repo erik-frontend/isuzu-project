@@ -101,9 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadMore.init();
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadMore.init();
-});
 
 categoryList.init()
 filterGroup.init()

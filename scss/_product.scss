@@ -779,8 +779,11 @@
     }
 
     &__wrapper {
-        display: flex;
-        gap: 45px;
+
+        &.product {
+            display: flex;
+            gap: 45px;
+        }
     }
 }
 
@@ -1277,6 +1280,11 @@
     .popup-cart__actions {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: 520px) {
+            flex-direction: column;
+            gap: 20px;
+        }
     }
 
     .popup-cart__continue {

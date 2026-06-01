@@ -2975,6 +2975,10 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
 
     }
 
+    &.pbot {
+        padding-bottom: 20px;
+    }
+
 
 
     .price-filter {
@@ -3220,6 +3224,14 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
         pointer-events: none;
     }
 
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.2;
+
+        color: var(--color-grey-100);
+    }
+
     &__box {
         width: 16px;
         height: 16px;
@@ -3229,30 +3241,35 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
         border: 1px solid var(--color-grey-150);
         border-radius: 2px;
 
+        position: relative;
+
+        transition: border-color .2s;
+    }
+
+    &__box::after {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background: url(../assets/tick.svg) no-repeat center;
+        background-size: 10px;
+
+        opacity: 0;
+        transform: scale(.5);
+
         transition:
-            background .2s linear,
-            border-color .2s linear;
-    }
-
-    &__text {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 1.2;
-
-        color: var(--color-grey-100);
-    }
-
-    &:hover {
-
-        .filter-checkbox__box {
-            border-color: var(--color-red);
-        }
+            opacity .2s ease,
+            transform .2s ease;
     }
 
     &__input:checked+.filter-checkbox__box {
-        background: var(--color-red);
-
         border-color: var(--color-red);
+    }
+
+    &__input:checked+.filter-checkbox__box::after {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -3350,7 +3367,20 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
 
     &__list {
         display: flex;
+        flex-wrap: wrap;
         gap: 20px;
+
+         @media (max-width: 1650px) {
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            gap: 15px;
+        }
+
+        @media (max-width: 480px) {
+            gap: 10px;
+        }
     }
 
     &__item {
@@ -3359,9 +3389,16 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
         min-width: 170px;
 
 
-        @media (max-width: 1100px) {
-            max-width: 170px;
-            width: 100%;
+        @media (max-width: 1024px) {
+            flex-basis: calc(33.333% - 14px);
+        }
+
+        @media (max-width: 768px) {
+            flex-basis: calc(50% - 8px);
+        }
+
+        @media (max-width: 480px) {
+            flex-basis: calc(50% - 5px);
         }
     }
 
@@ -3373,6 +3410,14 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
         color: #010101;
         text-align: center;
         width: 120px;
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 14px;
+        }
     }
 
 
@@ -3400,6 +3445,14 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
 
     &__img {
         width: 100px;
+
+         @media (max-width: 768px) {
+            width: 80px;
+        }
+
+        @media (max-width: 480px) {
+            width: 70px;
+        }
     }
 }
 
