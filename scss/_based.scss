@@ -3296,6 +3296,9 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
         font-size: 14px;
         line-height: 1; // 71%
 
+        @media (max-width: 590px) {
+            font-size: 10px;
+        }
 
         &::after {
             content: "/";
@@ -3359,6 +3362,7 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
         }
     }
 }
+
 
 .catalog-subcategories {
     padding-bottom: 30px;
