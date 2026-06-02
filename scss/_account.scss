@@ -919,7 +919,16 @@
 }
 
 
+.account-rating {
+    gap: 0;
+    justify-content: space-between;
+}
 
+.star-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
 
 .grey-bg {
@@ -931,7 +940,7 @@
     background: url(../assets/favourite.svg) no-repeat center;
     width: 16px;
     height: 16px;
-    margin-left: 74px;
+    border: none;
 }
 
 .productCard__remove {

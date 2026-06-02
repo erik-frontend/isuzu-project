@@ -33,10 +33,10 @@
                                     <a href="./index.html">Головна</a>
                                 </li>
                                 <li>
-                                    <a href="./about.html">Про компанію</a>
+                                    <a href="./product.html">Про компанію</a>
                                 </li>
                                 <li>
-                                    <a href="./delivery.html">Доставка та оплата</a>
+                                    <a href="./404.html">Доставка та оплата</a>
                                 </li>
                                 <li>
                                     <a href="./delivery.html">Гарантія та повернення</a>
@@ -253,7 +253,7 @@
                                     </defs>
                                 </svg>
                             </a>
-                            <a href="./cabinet.html" class="header__buttons-item favorite">
+                            <a href="./account.html" class="header__buttons-item favorite">
                                 <svg width="26" height="26" viewBox="0 0 26 26" fill="#6F6F6F"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -492,9 +492,9 @@
 
                             </div>
 
-                            <button class="productPage__buy btn" type="submit">
+                            <a href="order.html" class="productPage__buy btn" type="submit">
                                 Купити
-                            </button>
+                            </a>
 
                             <button class="productPage__quickOrder" type="submit">
                                 Замовлення в один клік
@@ -1805,12 +1805,12 @@
                     </div>
 
                     <div class="popup-cart__actions">
-                        <button class="popup-cart__continue" type="button">
+                        <a class="popup-cart__continue" type="button">
                             Продовжити покупки
-                        </button>
-                        <button class="popup-cart__checkout" type="button">
+                        </a>
+                        <a class="popup-cart__checkout" href="order.html" type="button">
                             Оформити замовлення
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1838,7 +1838,7 @@
 
                 <form class="popup-quick-order__form">
 
-                    <input type="email" placeholder="Ваш email" class="popup-quick-order__input">
+                    <input type="email" placeholder="Ваш email" required class="popup-quick-order__input">
 
                     <button type="submit" class="popup-quick-order__btn">
                         Замовити
@@ -1997,8 +1997,6 @@
         </div>
     </div>
 
-
-
     <!-- sign up popup -->
 
     <div id="registrationPopup" class="popup popup--registration">
@@ -2092,4 +2090,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/product.js"></script>
+    <script src="./js/popup.js"></script>
+
 </body>

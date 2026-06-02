@@ -31,4 +31,29 @@ const deliveryTabs = {
     }
 };
 
+const quantityCounter = {
+    items: document.querySelectorAll('.quantity'),
+
+    init() {
+        if (!this.items.length) return;
+
+        this.items.forEach(item => {
+            const input = item.querySelector('.quantity__input');
+            const plusBtn = item.querySelector('.quantity__btn--plus');
+            const minusBtn = item.querySelector('.quantity__btn--minus');
+
+            plusBtn?.addEventListener('click', () => {
+                input.value = +input.value + 1;
+            });
+
+            minusBtn?.addEventListener('click', () => {
+                if (+input.value > 1) {
+                    input.value = +input.value - 1;
+                }
+            });
+        });
+    }
+};
+
+quantityCounter.init()
 deliveryTabs.init();

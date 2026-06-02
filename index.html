@@ -29,10 +29,10 @@
                                     <a href="./index.html">Головна</a>
                                 </li>
                                 <li>
-                                    <a href="./about.html">Про компанію</a>
+                                    <a href="./product.html">Про компанію</a>
                                 </li>
                                 <li>
-                                    <a href="./delivery.html">Доставка та оплата</a>
+                                    <a href="./404.html">Доставка та оплата</a>
                                 </li>
                                 <li>
                                     <a href="./delivery.html">Гарантія та повернення</a>
@@ -249,7 +249,7 @@
                                     </defs>
                                 </svg>
                             </a>
-                            <a href="./cabinet.html" class="header__buttons-item favorite">
+                            <a href="./account.html" class="header__buttons-item favorite">
                                 <svg width="26" height="26" viewBox="0 0 26 26" fill="#6F6F6F"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -2018,8 +2018,266 @@
             </div>
         </div>
     </footer>
+
+    
+    <div class="popup popup-auth active" id="loginPopup">
+        <div class="popup__bg"></div>
+
+        <div class="popup__wrapper">
+            <div class="popup__content popup-auth__content">
+
+                <button class="popup__close popup-auth__close" type="button" aria-label="Закрити">
+                </button>
+
+                <div class="popup-auth__top">
+                    <h2 class="popup-auth__title">
+                        Вхід
+                    </h2>
+
+                    <p class="popup-auth__subtitle">
+                        Увійдіть, щоб переглядати історію замовлень, зберігати товари в обране
+                        та отримувати персональні пропозиції
+                    </p>
+                </div>
+
+                <form class="popup-auth__form" action="#">
+                    <div class="popup-auth__fields">
+
+                        <label class="popup-auth__field">
+                            <span class="popup-auth__label">
+                                Email <span>*</span>
+                            </span>
+
+                            <input type="email" class="popup-auth__input" placeholder="Ваш email" required>
+                        </label>
+
+                        <label class="popup-auth__field">
+                            <span class="popup-auth__label">
+                                Пароль <span>*</span>
+                            </span>
+
+                            <input type="password" class="popup-auth__input" placeholder="Ваш пароль" required>
+                        </label>
+
+                        <div class="popup-auth__row">
+
+                            <label class="popup-auth__checkbox">
+
+                                <input type="checkbox">
+
+                                <span class="popup-auth__checkmark"></span>
+
+                                <span class="popup-auth__checkbox-text">
+                                    Запам’ятати мене
+                                </span>
+
+                            </label>
+
+                            <a href="#" class="popup-auth__forgot">
+                                Забули пароль?
+                            </a>
+
+                        </div>
+
+                        <button type="submit" class="popup-auth__submit">
+                            Увійти
+                        </button>
+
+                        <div class="popup-auth__bottom">
+                            <button>Відновити доступ</button>
+
+                            <div class="popup-auth__options">
+
+                                <span>
+                                    Ще не маєте акаунту?
+                                </span>
+
+                                <a href="#" class="sign-up">
+                                    Зареєструватися
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="registrationPopup" class="popup popup--registration">
+        <div class="popup__bg"></div>
+        <div class="popup__wrapper">
+            <div class="popup__content">
+                <button class="popup__close" aria-label="Закрити форму">
+                </button>
+
+                <h2 class="popup__title">Реєстрація</h2>
+                <p class="popup__sub-login">Вже зареєстровані? <a href="#" class="login-btn">Увійти</a></p>
+
+                <form action="#" class="popup__form reg-form">
+
+                    <fieldset class="reg-form__section">
+                        <legend class="reg-form__title">1. Ваші контактні дані</legend>
+
+                        <div class="reg-form__field-group">
+                            <label class="reg-form__label">Ім'я <span class="reg-form__required">*</span></label>
+                            <input type="text" class="reg-form__input" placeholder="Ваше ім'я" required>
+                        </div>
+
+                        <div class="reg-form__field-group">
+                            <label class="reg-form__label">Прізвище <span class="reg-form__required">*</span></label>
+                            <input type="text" class="reg-form__input" placeholder="Введіть ваше прізвище" required>
+                        </div>
+
+                        <div class="reg-form__field-group">
+                            <label class="reg-form__label">Телефон <span class="reg-form__required">*</span></label>
+                            <input type="tel" class="reg-form__input" placeholder="Номер телефону" required>
+                        </div>
+
+                        <div class="reg-form__field-group">
+                            <label class="reg-form__label">Email</label>
+                            <input type="email" class="reg-form__input" placeholder="Електронна пошта">
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="reg-form__section">
+                        <legend class="reg-form__title">2. Дані організації</legend>
+
+                        <div class="reg-form__field-group">
+                            <label class="reg-form__label">Організація</label>
+                            <input type="text" class="reg-form__input" placeholder="Введіть назву організації">
+                        </div>
+
+                        <div class="reg-form__field-group">
+                            <label class="reg-form__label">ЄДРПОУ</label>
+                            <input type="text" class="reg-form__input" placeholder="Введіть ЄДРПОУ">
+                        </div>
+
+                        <div class="reg-form__field-group">
+                            <label class="reg-form__label">Область</label>
+                            <input type="text" class="reg-form__input" placeholder="Введіть область">
+                        </div>
+
+                        <div class="reg-form__field-group">
+                            <label class="reg-form__label">Місто</label>
+                            <input type="text" class="reg-form__input" placeholder="Введіть місто">
+                        </div>
+
+                        <div class="reg-form__field-group">
+                            <label class="reg-form__label">Адреса</label>
+                            <input type="text" class="reg-form__input" placeholder="Адреса">
+                        </div>
+
+                        <div class="reg-form__field-group">
+                            <label class="reg-form__label">Установчі документи організації</label>
+                            <div class="reg-form__file-dropzone">
+                                <input type="file" id="regFormFile" class="reg-form__file-input"
+                                    accept=".jpg,.jpeg,.png,.pdf" multiple>
+                                <label for="regFormFile" class="reg-form__file-trigger">
+                                    <img src="./assets/upload.svg" alt="">
+                                    <span class="reg-form__file-text">Перетягніть або <span
+                                            class="reg-form__file-highlight">виберіть файл</span> для
+                                        завантаження</span>
+                                </label>
+                            </div>
+                            <p class="reg-form__file-hint">Підтримувані типи файлів: .jpg, .jpeg, .png, .pdf.</p>
+                        </div>
+                    </fieldset>
+
+                </form>
+                <button type="submit" class="reg-form__submit-btn">Зареєструватися</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="popup popup-cart" id="cartPopup">
+        <div class="popup__bg"></div>
+        <div class="popup__wrapper">
+            <div class="popup__content popup-cart__content">
+                <div class="popup-cart__header">
+                    <h2 class="popup-cart__title">
+                        В кошику <span>(2)</span> товари
+                    </h2>
+                    <button class="popup__close" type="button">
+
+                    </button>
+                </div>
+                <div class="popup-cart__body">
+                    <div class="popup-cart__item">
+                        <a href="#" class="popup-cart__image">
+                            <img src="./assets/product.jpg" alt="">
+                        </a>
+                        <div class="popup-cart__info">
+                            <a href="#" class="popup-cart__name">
+                                8982738210 Міст діодний з реле регулятором 90A NPR75
+                            </a>
+                            <div class="popup-cart__article">
+                                Артикул: <span>920</span>
+                            </div>
+                            <div class="popup-cart__price">
+                                5 954 грн
+                            </div>
+                            <div class="quantity">
+                                <button class="quantity__btn quantity__btn--minus" type="button"></button>
+                                <input type="number" min="1" value="1" class="quantity__input">
+                                <button class="quantity__btn quantity__btn--plus" type="button"></button>
+                            </div>
+                        </div>
+                        <button class="popup-cart__remove" type="button">
+                            Видалити
+                        </button>
+                    </div>
+                    <div class="popup-cart__item">
+                        <a href="#" class="popup-cart__image">
+                            <img src="./assets/product.jpg" alt="">
+                        </a>
+                        <div class="popup-cart__info">
+                            <a href="#" class="popup-cart__name">
+                                8982738210 Міст діодний з реле регулятором 90A NPR75
+                            </a>
+                            <div class="popup-cart__article">
+                                Артикул: <span>920</span>
+                            </div>
+                            <div class="popup-cart__price">
+                                5 954 грн
+                            </div>
+                            <div class="quantity">
+                                <button class="quantity__btn quantity__btn--minus" type="button"></button>
+                                <input type="number" min="1" value="1" class="quantity__input">
+                                <button class="quantity__btn quantity__btn--plus" type="button"></button>
+                            </div>
+                        </div>
+                        <button class="popup-cart__remove" type="button">
+                            Видалити
+                        </button>
+                    </div>
+                </div>
+
+                <div class="popup-cart__footer">
+                    <div class="popup-cart__total">
+                        <span>Всього:</span>
+                        <span>
+                            12 500 грн
+                        </span>
+                    </div>
+
+                    <div class="popup-cart__actions">
+                        <a class="popup-cart__continue" type="button">
+                            Продовжити покупки
+                        </a>
+                        <a class="popup-cart__checkout" href="order.html" type="button">
+                            Оформити замовлення
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/popup.js"></script>
 </body>
-
 </html>
