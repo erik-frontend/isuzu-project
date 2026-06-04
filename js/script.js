@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 item.classList.toggle('_active');
                 headerCatalog.classList.toggle('_active');
 
-                menu.classList.remove('_active');
+                menu.classList.remove('_active');ё
                 document.body.classList.remove('_lock');
             });
         });

@@ -28,23 +28,23 @@ const filterGroup = {
 };
 
 const priceRange = {
-    range: document.querySelector('.price-filter__range'),
-    input: document.querySelector('.price-filter__input'),
-
     init() {
-        noUiSlider.create(this.range, {
+        const range = document.querySelector('.price-filter__range');
+        const input = document.querySelector('.price-filter__input');
+
+        if (!range || !input) return;
+
+        noUiSlider.create(range, {
             start: [0, 2500],
             connect: true,
-
             range: {
                 min: 0,
                 max: 5000
             }
         });
 
-        this.range.noUiSlider.on('update', (values) => {
-            this.input.value =
-                Math.round(values[1]) + ' грн';
+        range.noUiSlider.on('update', (values) => {
+            input.value = Math.round(values[1]) + ' грн';
         });
     }
 };
