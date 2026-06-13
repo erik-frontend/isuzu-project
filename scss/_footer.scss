@@ -8,12 +8,16 @@
     &__top {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        // justify-content: space-between;
         align-items: flex-start;
-        gap: 73px;
+        gap: 74px;
 
         position: relative;
         z-index: 2;
+
+        @media (max-width: 980px) {
+            gap: 45px;
+        }
     }
 
     &__logo {
@@ -43,6 +47,7 @@
     &__column {
         display: flex;
         flex-direction: column;
+        padding: 0;
     }
 
     .contacts {

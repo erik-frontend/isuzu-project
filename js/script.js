@@ -135,6 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const catalogSliderEl = document.querySelector('.catalog__slider')
     const catalogSlider = new Swiper('.catalog__slider .swiper', {
+        loop: true,
         slidesPerView: 1,
         spaceBetween: 10,
         navigation: {
@@ -154,15 +155,38 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         breakpoints: {
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            1280: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            }
+        0: {
+            slidesPerView: 1
+        },
+
+        480: {
+            slidesPerView: 1.5
+        },
+
+        768: {
+            slidesPerView: 2
+        },
+
+        992: {
+            slidesPerView: 2.5
+        },
+
+        1200: {
+            slidesPerView: 3
+        },
+
+        1440: {
+            slidesPerView: 4
+        },
+
+        1920: {
+            slidesPerView: 5
+        },
+
+        2560: {
+            slidesPerView: 6
         }
+    }
     })
 
 
