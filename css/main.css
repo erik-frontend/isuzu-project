@@ -2757,6 +2757,16 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
     font-size: 10px;
   }
 }
+@media (max-width: 399px) {
+  .catalog-breadcrumbs__item {
+    font-size: 8px;
+  }
+}
+@media (max-width: 339px) {
+  .catalog-breadcrumbs__item {
+    font-size: 7px;
+  }
+}
 .catalog-breadcrumbs__item::after {
   content: "/";
   margin: 0 9px;

@@ -1827,7 +1827,7 @@ html:not(.v-mobile) .catalog__item:focus-visible .catalog__item-btn svg {
 }
 
 .second {
-    padding:0 0 70px !important;
+    padding: 0 0 70px !important;
 }
 
 .related__top {
@@ -3364,6 +3364,14 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
             font-size: 10px;
         }
 
+        @media (max-width: 399px) {
+            font-size: 8px;
+        }
+
+        @media (max-width: 339px) {
+            font-size: 7px;
+        }
+
         &::after {
             content: "/";
             margin: 0 9px;
@@ -3438,7 +3446,7 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
         flex-wrap: wrap;
         gap: 20px;
 
-         @media (max-width: 1650px) {
+        @media (max-width: 1650px) {
             justify-content: center;
         }
 
@@ -3514,7 +3522,7 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
     &__img {
         width: 100px;
 
-         @media (max-width: 768px) {
+        @media (max-width: 768px) {
             width: 80px;
         }
 
