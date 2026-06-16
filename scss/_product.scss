@@ -2172,3 +2172,48 @@ body.no-scroll {
         }
     }
 }
+
+@media (max-width: 550px) {
+
+    .popup--registration {
+
+        .popup__content {
+            padding: 40px 25px;
+        }
+
+        .popup__title {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .popup__sub-login {
+            font-size: 13px;
+        }
+    }
+
+    .reg-form {
+        gap: 20px;
+
+        &__title {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        &__input {
+            max-width: 100%;
+        }
+
+        &__file-dropzone {
+            padding: 20px;
+        }
+
+        &__file-text {
+            width: auto;
+            font-size: 13px;
+        }
+
+        &__section{
+            gap: 20px;
+        }
+    }
+}

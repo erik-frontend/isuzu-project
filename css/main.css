@@ -328,10 +328,6 @@ html:not(.v-mobile) .btn.btn-3:focus-visible svg {
   --swiper-pagination-progressbar-bg-color: var(--color-grey-150);
 }
 
-.swiper-slide {
-  width: 450px !important;
-}
-
 .swiper-bottom {
   position: relative;
   display: flex;
@@ -4854,6 +4850,38 @@ body.no-scroll {
   background-color: #c81d10;
 }
 
+@media (max-width: 550px) {
+  .popup--registration .popup__content {
+    padding: 40px 25px;
+  }
+  .popup--registration .popup__title {
+    font-size: 24px;
+    text-align: center;
+  }
+  .popup--registration .popup__sub-login {
+    font-size: 13px;
+  }
+  .reg-form {
+    gap: 20px;
+  }
+  .reg-form__title {
+    font-size: 16px;
+    text-align: center;
+  }
+  .reg-form__input {
+    max-width: 100%;
+  }
+  .reg-form__file-dropzone {
+    padding: 20px;
+  }
+  .reg-form__file-text {
+    width: auto;
+    font-size: 13px;
+  }
+  .reg-form__section {
+    gap: 20px;
+  }
+}
 .checkout {
   padding: 40px 0 80px;
 }
@@ -6577,7 +6605,7 @@ input:checked + .checkout-radio__box::after {
 }
 .contacts-info__schedule {
   margin-top: 10px;
-  width: 142px;
+  width: 143px;
   font-weight: 400;
   font-size: 11px;
   line-height: 1.2;

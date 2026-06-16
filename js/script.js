@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 item.classList.toggle('_active');
                 headerCatalog.classList.toggle('_active');
 
-                menu.classList.remove('_active');ё
+                menu.classList.remove('_active'); ё
                 document.body.classList.remove('_lock');
             });
         });
@@ -126,11 +126,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // function updateFraction(swiper, slider) {
+    //     const el = slider.querySelector('.swiper-pagination-pages')
+    //     if (el) {
+    //         el.textContent = `${swiper.activeIndex + 1} / ${swiper.slides.length}`
+    //     }
+    // }
+
     function updateFraction(swiper, slider) {
-        const el = slider.querySelector('.swiper-pagination-pages')
-        if (el) {
-            el.textContent = `${swiper.activeIndex + 1} / ${swiper.slides.length}`
-        }
+        const el = slider.querySelector('.swiper-pagination-pages');
+
+        if (!el) return;
+
+        const total = swiper.slidesEl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length;
+
+        el.textContent = `${swiper.realIndex + 1} / ${total}`;
     }
 
     const catalogSliderEl = document.querySelector('.catalog__slider')
@@ -155,38 +165,38 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         breakpoints: {
-        0: {
-            slidesPerView: 1
-        },
+            0: {
+                slidesPerView: 1
+            },
 
-        480: {
-            slidesPerView: 1.5
-        },
+            480: {
+                slidesPerView: 1.5
+            },
 
-        768: {
-            slidesPerView: 2
-        },
+            768: {
+                slidesPerView: 2
+            },
 
-        992: {
-            slidesPerView: 2.5
-        },
+            992: {
+                slidesPerView: 2.5
+            },
 
-        1200: {
-            slidesPerView: 3
-        },
+            1200: {
+                slidesPerView: 3
+            },
 
-        1440: {
-            slidesPerView: 4
-        },
+            1440: {
+                slidesPerView: 4
+            },
 
-        1920: {
-            slidesPerView: 5
-        },
+            1920: {
+                slidesPerView: 5
+            },
 
-        2560: {
-            slidesPerView: 6
+            2560: {
+                slidesPerView: 6
+            }
         }
-    }
     })
 
 
