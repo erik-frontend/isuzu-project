@@ -212,7 +212,9 @@
                         </div>
 
                         <div class="header__search">
-                            <input type="text" placeholder="Пошук">
+                            <label for="search">
+                                <input type="text" placeholder="Пошук" id="search">
+                            </label>
                             <svg width="26" height="26" viewBox="0 0 26 26" fill="#6F6F6F"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_2011_2705)">
@@ -226,6 +228,7 @@
                                     </clipPath>
                                 </defs>
                             </svg>
+                            <button class="header__search-close" type="button"></button>
                         </div>
 
                         <div class="header__buttons">
@@ -400,7 +403,7 @@
                         </svg>
                     </a>
                 </div>
-                
+
 
                 <a href="./category.html" class="catalog__btn btn btn-1 _mob">
                     <span>Дивитись весь каталог</span>
@@ -413,138 +416,131 @@
             </div>
         </div>
         <div class="catalog__slider">
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
-                            <a href="./category.html" class="swiper-slide catalog__item"
-                                style="background-image: url(./assets/catalog-item-bg.jpg);">
-                                <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
-                                <div class="catalog__item-image">
-                                    <img src="./assets/category.png" alt="">
-                                </div>
-                                <div class="catalog__item-btn btn btn-2">
-                                    <span>Детальніше</span>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </div>
-                            </a>
-                            <a href="./category.html" class="swiper-slide catalog__item"
-                                style="background-image: url(./assets/catalog-item-bg.jpg);">
-                                <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
-                                <div class="catalog__item-image">
-                                    <img src="./assets/category-2.png" alt="">
-                                </div>
-                                <div class="catalog__item-btn btn btn-2">
-                                    <span>Детальніше</span>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </div>
-                            </a>
-                            <a href="./category.html" class="swiper-slide catalog__item"
-                                style="background-image: url(./assets/catalog-item-bg.jpg);">
-                                <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
-                                <div class="catalog__item-image">
-                                    <img src="./assets/category-3.png" alt="">
-                                </div>
-                                <div class="catalog__item-btn btn btn-2">
-                                    <span>Детальніше</span>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </div>
-                            </a>
-                            <a href="./category.html" class="swiper-slide catalog__item"
-                                style="background-image: url(./assets/catalog-item-bg.jpg);">
-                                <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
-                                <div class="catalog__item-image">
-                                    <img src="./assets/category-4.png" alt="">
-                                </div>
-                                <div class="catalog__item-btn btn btn-2">
-                                    <span>Детальніше</span>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </div>
-                            </a>
-                            <a href="./category.html" class="swiper-slide catalog__item"
-                                style="background-image: url(./assets/catalog-item-bg.jpg);">
-                                <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
-                                <div class="catalog__item-image">
-                                    <img src="./assets/category.png" alt="">
-                                </div>
-                                <div class="catalog__item-btn btn btn-2">
-                                    <span>Детальніше</span>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </div>
-                            </a>
-                            <a href="./category.html" class="swiper-slide catalog__item"
-                                style="background-image: url(./assets/catalog-item-bg.jpg);">
-                                <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
-                                <div class="catalog__item-image">
-                                    <img src="./assets/category.png" alt="">
-                                </div>
-                                <div class="catalog__item-btn btn btn-2">
-                                    <span>Детальніше</span>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </div>
-                            </a>
-                            <a href="./category.html" class="swiper-slide catalog__item"
-                                style="background-image: url(./assets/catalog-item-bg.jpg);">
-                                <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
-                                <div class="catalog__item-image">
-                                    <img src="./assets/category.png" alt="">
-                                </div>
-                                <div class="catalog__item-btn btn btn-2">
-                                    <span>Детальніше</span>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </div>
-                            </a>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <a href="./category.html" class="swiper-slide catalog__item"
+                        style="background-image: url(./assets/catalog-item-bg.jpg);">
+                        <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
+                        <div class="catalog__item-image">
+                            <img src="./assets/category.png" alt="">
                         </div>
-                        <div class="swiper-bottom">
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-buttons">
-                                <div class="swiper-button-prev"></div>
-                                <div class="swiper-pagination-pages"></div>
-                                <div class="swiper-button-next"></div>
-                            </div>
+                        <div class="catalog__item-btn btn btn-2">
+                            <span>Детальніше</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
                         </div>
+                    </a>
+                    <a href="./category.html" class="swiper-slide catalog__item"
+                        style="background-image: url(./assets/catalog-item-bg.jpg);">
+                        <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
+                        <div class="catalog__item-image">
+                            <img src="./assets/category-2.png" alt="">
+                        </div>
+                        <div class="catalog__item-btn btn btn-2">
+                            <span>Детальніше</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="./category.html" class="swiper-slide catalog__item"
+                        style="background-image: url(./assets/catalog-item-bg.jpg);">
+                        <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
+                        <div class="catalog__item-image">
+                            <img src="./assets/category-3.png" alt="">
+                        </div>
+                        <div class="catalog__item-btn btn btn-2">
+                            <span>Детальніше</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="./category.html" class="swiper-slide catalog__item"
+                        style="background-image: url(./assets/catalog-item-bg.jpg);">
+                        <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
+                        <div class="catalog__item-image">
+                            <img src="./assets/category-4.png" alt="">
+                        </div>
+                        <div class="catalog__item-btn btn btn-2">
+                            <span>Детальніше</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="./category.html" class="swiper-slide catalog__item"
+                        style="background-image: url(./assets/catalog-item-bg.jpg);">
+                        <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
+                        <div class="catalog__item-image">
+                            <img src="./assets/category.png" alt="">
+                        </div>
+                        <div class="catalog__item-btn btn btn-2">
+                            <span>Детальніше</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="./category.html" class="swiper-slide catalog__item"
+                        style="background-image: url(./assets/catalog-item-bg.jpg);">
+                        <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
+                        <div class="catalog__item-image">
+                            <img src="./assets/category.png" alt="">
+                        </div>
+                        <div class="catalog__item-btn btn btn-2">
+                            <span>Детальніше</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="./category.html" class="swiper-slide catalog__item"
+                        style="background-image: url(./assets/catalog-item-bg.jpg);">
+                        <h3 class="catalog__item-title h3">Двигун та система охолодження</h3>
+                        <div class="catalog__item-image">
+                            <img src="./assets/category.png" alt="">
+                        </div>
+                        <div class="catalog__item-btn btn btn-2">
+                            <span>Детальніше</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#231F20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 15L15 5" stroke="inherit" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6.875 5H15V13.125" stroke="inherit" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-bottom">
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-buttons">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination-pages"></div>
+                        <div class="swiper-button-next"></div>
                     </div>
                 </div>
+            </div>
+        </div>
     </section>
 
     <section class="related first">
@@ -2010,7 +2006,9 @@
 
             <!-- lower part -->
             <div class="footer__bottom">
-                <p>© 2011-<script>document.write(new Date().getFullYear())</script>. Усі права захищені.</p>
+                <p>© 2011-
+                    <script>document.write(new Date().getFullYear())</script>. Усі права захищені.
+                </p>
 
                 <div class="footer__bottom-links">
                     <a href="#">Політика конфіденційності</a>
@@ -2020,7 +2018,7 @@
         </div>
     </footer>
 
-    
+
     <div class="popup popup-auth active" id="loginPopup">
         <div class="popup__bg"></div>
 
@@ -2281,4 +2279,5 @@
     <script src="./js/script.js"></script>
     <script src="./js/popup.js"></script>
 </body>
+
 </html>

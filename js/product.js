@@ -371,6 +371,25 @@ const reviewsPagination = {
 //     }
 // };
 
+const productDescription = {
+    text: document.querySelector('.productPage__text'),
+    button: document.querySelector('.productPage__detales'),
+
+    init() {
+        if (!this.text || !this.button) return;
+
+        this.button.addEventListener('click', () => {
+            this.text.classList.toggle('active');
+
+            this.button.textContent =
+                this.text.classList.contains('active')
+                    ? 'Згорнути'
+                    : 'Детальніше';
+        });
+    }
+};
+
+productDescription.init();
 productGallery.init();
 quantityCounter.init();
 productTabs.init();

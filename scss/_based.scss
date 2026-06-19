@@ -1337,22 +1337,86 @@ html:not(.v-mobile) .header__catalog:focus-visible svg {
     transform: rotate(180deg);
 }
 
+// .header__search {
+//     position: relative;
+//     max-width: 576px;
+//     width: 100%;
+// }
+
+// @media (max-width: 999px) {
+//     .header__search {
+//         position: unset;
+//         width: -webkit-fit-content;
+//         width: -moz-fit-content;
+//         width: fit-content;
+//         display: -webkit-box;
+//         display: -ms-flexbox;
+//         display: flex;
+//         margin-left: auto;
+//     }
+// }
+
+// .header__search input {
+//     width: 100%;
+//     padding: 16px 60px 16px 20px;
+//     border: 1px solid var(--color-grey-150);
+//     border-radius: 5px;
+//     font-size: 15px;
+//     -webkit-transition: 0.2s ease;
+//     transition: 0.2s ease;
+//     outline: none;
+// }
+
+// @media (max-width: 999px) {
+//     .header__search input {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         opacity: 0;
+//         visibility: hidden;
+//         z-index: 10;
+//     }
+// }
+
+// .header__search:hover input {
+//     opacity: 1;
+//     visibility: visible;
+// }
+
+// .header__search label {
+//     transition: .3s;
+// }
+
+// @media (max-width:999px){
+
+//     .header__search label{
+//         opacity:0;
+//         visibility:hidden;
+//     }
+
+//     .header__search.active input{
+//         opacity:1;
+//         visibility:visible;
+//     }
+
+// }
+
+// .header__search svg {
+//     position: absolute;
+//     top: 12px;
+//     right: 20px;
+//     cursor: pointer;
+//     -webkit-transition: 0.2s ease;
+//     transition: 0.2s ease;
+// }
+
 .header__search {
     position: relative;
     max-width: 576px;
     width: 100%;
-}
 
-@media (max-width: 999px) {
-    .header__search {
-        position: unset;
-        width: -webkit-fit-content;
-        width: -moz-fit-content;
-        width: fit-content;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        margin-left: auto;
+    &-close {
+        display: none;
     }
 }
 
@@ -1362,25 +1426,8 @@ html:not(.v-mobile) .header__catalog:focus-visible svg {
     border: 1px solid var(--color-grey-150);
     border-radius: 5px;
     font-size: 15px;
-    -webkit-transition: 0.2s ease;
-    transition: 0.2s ease;
+    transition: .3s;
     outline: none;
-}
-
-@media (max-width: 999px) {
-    .header__search input {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 10;
-    }
-}
-
-.header__search:hover input {
-    opacity: 1;
-    visibility: visible;
 }
 
 .header__search svg {
@@ -1388,8 +1435,60 @@ html:not(.v-mobile) .header__catalog:focus-visible svg {
     top: 12px;
     right: 20px;
     cursor: pointer;
-    -webkit-transition: 0.2s ease;
-    transition: 0.2s ease;
+    transition: .2s ease;
+}
+
+@media (max-width: 999px) {
+
+    .header__search {
+        position: unset;
+        width: fit-content;
+        display: flex;
+        margin-left: auto;
+
+        input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            opacity: 0;
+            visibility: hidden;
+
+            z-index: 10;
+        }
+
+        &.active {
+
+            input {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            svg {
+                display: none;
+            }
+
+            .header__search-close {
+                display: block;
+
+                position: absolute;
+                top: 50%;
+                right: 16px;
+                transform: translateY(-50%);
+
+                width: 20px;
+                height: 20px;
+
+                background: url("../assets/header-cross.svg") no-repeat center;
+                background-size: contain;
+
+                border: none;
+                cursor: pointer;
+                z-index: 11;
+            }
+        }
+    }
 }
 
 html:not(.v-mobile) .header__search svg:hover {
@@ -2967,7 +3066,7 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
     &__inner {
         border-radius: 5px;
         background: var(--color-grey-200);
-        padding: 29px 21px 37px 21px;
+        padding: 13px 21px 13px 21px;;
     }
 
     &__actions {

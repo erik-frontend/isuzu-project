@@ -360,11 +360,37 @@
         padding: 47px 0 55px;
     }
 
-    &__text {
+    // &__text {
+    //     font-weight: 400;
+    //     font-size: 16px;
+    //     line-height: 1.5;
+    //     color: var(--color-black);
+    // }
+
+    // &__detales {
+    //     display: block;
+    //     font-weight: 400;
+    //     font-size: 14px;
+    //     line-height: 1;
+    //     text-decoration: underline;
+    //     text-decoration-skip-ink: none;
+    //     color: var(--color-grey-100);
+    //     padding: 15px 0 10px;
+    // }
+
+     &__text {
         font-weight: 400;
         font-size: 16px;
         line-height: 1.5;
         color: var(--color-black);
+
+        max-height: 120px;
+        overflow: hidden;
+        transition: max-height .3s ease;
+
+        &.active {
+            max-height: 1000px;
+        }
     }
 
     &__detales {
@@ -373,9 +399,12 @@
         font-size: 14px;
         line-height: 1;
         text-decoration: underline;
-        text-decoration-skip-ink: none;
         color: var(--color-grey-100);
         padding: 15px 0 10px;
+
+        background: none;
+        border: none;
+        cursor: pointer;
     }
 
     // end of block with description

@@ -351,3 +351,60 @@ document.addEventListener('DOMContentLoaded', function () {
     // bg.addEventListener("click", closePopup);
 
 });
+
+
+
+
+
+
+
+
+
+
+const mobileSearch = {
+    search: document.querySelector('.header__search'),
+    icon: document.querySelector('.header__search svg'),
+    closeBtn: document.querySelector('.header__search-close'),
+
+    init() {
+        if (!this.search || !this.icon) return;
+
+        // Открытие поиска
+        this.icon.addEventListener('click', () => {
+
+            if (window.innerWidth >= 1000) return;
+
+            this.search.classList.add('active');
+        });
+
+        // Закрытие по крестику
+        this.closeBtn?.addEventListener('click', () => {
+
+            if (window.innerWidth >= 1000) return;
+
+            this.search.classList.remove('active');
+        });
+
+        // Закрытие по клику вне поиска
+        document.addEventListener('click', (e) => {
+
+            if (window.innerWidth >= 1000) return;
+
+            if (
+                this.search.classList.contains('active') &&
+                !this.search.contains(e.target)
+            ) {
+                this.search.classList.remove('active');
+            }
+        });
+
+        // Закрытие при увеличении экрана
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1000) {
+                this.search.classList.remove('active');
+            }
+        });
+    }
+};
+
+mobileSearch.init();
