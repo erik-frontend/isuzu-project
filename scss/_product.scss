@@ -378,7 +378,7 @@
     //     padding: 15px 0 10px;
     // }
 
-     &__text {
+    &__text {
         font-weight: 400;
         font-size: 16px;
         line-height: 1.5;
@@ -609,6 +609,10 @@
 @media (max-width: 1276px) {
     .productPage {
 
+        &__prices {
+            gap: 25px;
+        }
+
         &__top {
             flex-direction: column;
         }
@@ -633,6 +637,10 @@
             max-width: 100%;
         }
 
+        &__price-info {
+            flex-direction: unset;
+        }
+
         .productAdvantages {
             flex-direction: column;
             gap: 25px;
@@ -655,10 +663,7 @@
             line-height: 1.2;
         }
 
-        &__meta {
-            flex-direction: column;
-            gap: 20px;
-        }
+
 
         &__rating {
             flex-wrap: wrap;
@@ -678,16 +683,19 @@
         }
 
         &__actions {
+            display: flex;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
-        &__buy,
-        &__quickOrder {
-            max-width: 100%;
+        &__buy {
+            flex: 1;
+            max-width: none;
         }
 
-        .quantity {
+        &__quickOrder {
             width: 100%;
+            max-width: none;
         }
 
         &__description {
@@ -737,10 +745,17 @@
             }
         }
 
-
+        &__meta {
+            flex-direction: column;
+            gap: 20px;
+        }
 
         &__prices {
             flex-wrap: wrap;
+        }
+
+        &__favorite {
+            margin-left: 0;
         }
 
         &__discount {
@@ -782,6 +797,22 @@
 
 @media (max-width: 420px) {
     .productPage {
+
+        &__actions {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+        }
+
+        &__buy {
+            width: 100%;
+            flex: unset;
+        }
+
+        &__quickOrder {
+            width: 100%;
+        }
+
         .productGallery {
             &__main {
                 .swiper-slide {
@@ -2241,7 +2272,7 @@ body.no-scroll {
             font-size: 13px;
         }
 
-        &__section{
+        &__section {
             gap: 20px;
         }
     }
