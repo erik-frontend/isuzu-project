@@ -15,8 +15,19 @@ const cart = {
             this.open();
         });
 
-        this.closeBtn?.addEventListener('click', () => this.close());
-        this.bg?.addEventListener('click', () => this.close());
+        this.closeBtn?.addEventListener('click', () => {
+            this.close();
+        });
+
+        this.bg?.addEventListener('click', () => {
+            this.close();
+        });
+
+        this.element.addEventListener('click', (e) => {
+            if (!e.target.closest('.popup__content')) {
+                this.close();
+            }
+        });
 
         this.continueBtns.forEach(button => {
             button.addEventListener('click', () => {
@@ -27,7 +38,10 @@ const cart = {
         this.removeBtns.forEach(button => {
             button.addEventListener('click', () => {
                 const item = button.closest('.popup-cart__item');
-                if (item) item.remove();
+
+                if (item) {
+                    item.remove();
+                }
             });
         });
 
@@ -55,12 +69,13 @@ const quickOrderPopup = {
     openBtns: document.querySelectorAll(
         '.productPage__quickOrder, .checkout-help__button'
     ),
-
     popup: document.getElementById('quickOrderPopup'),
-    closeBtn: document.querySelector('#quickOrderPopup .popup__close'),
 
     init() {
-        if (!this.openBtns.length || !this.popup) return;
+        if (!this.popup) return;
+
+        this.closeBtn = this.popup.querySelector('.popup__close');
+        this.bg = this.popup.querySelector('.popup__bg');
 
         this.openBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -69,11 +84,15 @@ const quickOrderPopup = {
             });
         });
 
-        if (this.closeBtn) {
-            this.closeBtn.addEventListener('click', () => {
+        this.closeBtn?.addEventListener('click', () => this.close());
+
+        this.bg?.addEventListener('click', () => this.close());
+
+        this.popup.addEventListener('click', (e) => {
+            if (!e.target.closest('.popup__content')) {
                 this.close();
-            });
-        }
+            }
+        });
 
         window.addEventListener('keydown', (e) => {
             if (
@@ -100,7 +119,6 @@ const reviewPopup = {
     openButtons: document.querySelectorAll('.reviews-summary__button'),
 
     init() {
-
         if (!this.popup) return;
 
         this.bg = this.popup.querySelector('.review-popup__bg');
@@ -117,12 +135,21 @@ const reviewPopup = {
             });
         });
 
-        this.closeBtn.addEventListener('click', () => this.close());
+        this.closeBtn?.addEventListener('click', () => this.close());
 
-        this.bg.addEventListener('click', () => this.close());
+        this.bg?.addEventListener('click', () => this.close());
+
+        this.popup.addEventListener('click', (e) => {
+            if (!e.target.closest('.review-popup__content')) {
+                this.close();
+            }
+        });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.popup.classList.contains('active')) {
+            if (
+                e.key === 'Escape' &&
+                this.popup.classList.contains('active')
+            ) {
                 this.close();
             }
         });
@@ -147,7 +174,6 @@ const reviewPopup = {
         document.body.style.overflow = '';
     }
 };
-
 const authPopup = {
     popup: document.querySelector('.popup-auth'),
     openButtons: document.querySelectorAll('.header__buttons-item.cabinet'),
@@ -160,9 +186,7 @@ const authPopup = {
         this.signUpBtn = this.popup.querySelector('.sign-up');
 
         this.popup.classList.remove('active');
-        document.body.classList.remove('no-scroll');
 
-        // Открытие авторизации
         this.openButtons.forEach(button => {
             button.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -170,24 +194,31 @@ const authPopup = {
             });
         });
 
-        // Клик на Регистрацию -> Закрываем Авторизацию, открываем Регистрацию
-        if (this.signUpBtn) {
-            this.signUpBtn.addEventListener('click', (e) => {
-                e.preventDefault();
+        this.signUpBtn?.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            this.close();
+
+            if (typeof registrationPopup !== 'undefined') {
+                registrationPopup.open();
+            }
+        });
+
+        this.closeBtn?.addEventListener('click', () => this.close());
+
+        this.bg?.addEventListener('click', () => this.close());
+
+        this.popup.addEventListener('click', (e) => {
+            if (!e.target.closest('.popup__content')) {
                 this.close();
-
-                if (typeof registrationPopup !== 'undefined') {
-                    registrationPopup.open();
-                }
-            });
-        }
-
-        // Закрытие
-        if (this.closeBtn) this.closeBtn.addEventListener('click', () => this.close());
-        if (this.bg) this.bg.addEventListener('click', () => this.close());
+            }
+        });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.popup.classList.contains('active')) {
+            if (
+                e.key === 'Escape' &&
+                this.popup.classList.contains('active')
+            ) {
                 this.close();
             }
         });
@@ -203,7 +234,6 @@ const authPopup = {
         document.body.classList.remove('no-scroll');
     }
 };
-
 const registrationPopup = {
     openBtns: document.querySelectorAll('.trigger-registration'),
     popup: document.getElementById('registrationPopup'),
@@ -212,38 +242,41 @@ const registrationPopup = {
         if (!this.popup) return;
 
         this.closeBtn = this.popup.querySelector('.popup__close');
-        this.bgOverlay = this.popup.querySelector('.popup__bg');
-        // Находим кнопку "Увійти" внутри попапа регистрации
+        this.bg = this.popup.querySelector('.popup__bg');
         this.loginBtn = this.popup.querySelector('.login-btn');
 
-        // Открытие по обычным кнопкам
-        if (this.openBtns.length) {
-            this.openBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    this.open();
-                });
-            });
-        }
-
-        // Клик на Вход -> Закрываем Регистрацию, открываем Авторизацию
-        if (this.loginBtn) {
-            this.loginBtn.addEventListener('click', (e) => {
+        this.openBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                this.close();
-
-                if (typeof authPopup !== 'undefined') {
-                    authPopup.open();
-                }
+                this.open();
             });
-        }
+        });
 
-        // Закрытие
-        if (this.closeBtn) this.closeBtn.addEventListener('click', () => this.close());
-        if (this.bgOverlay) this.bgOverlay.addEventListener('click', () => this.close());
+        this.loginBtn?.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            this.close();
+
+            if (typeof authPopup !== 'undefined') {
+                authPopup.open();
+            }
+        });
+
+        this.closeBtn?.addEventListener('click', () => this.close());
+
+        this.bg?.addEventListener('click', () => this.close());
+
+        this.popup.addEventListener('click', (e) => {
+            if (!e.target.closest('.popup__content')) {
+                this.close();
+            }
+        });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.popup.classList.contains('active')) {
+            if (
+                e.key === 'Escape' &&
+                this.popup.classList.contains('active')
+            ) {
                 this.close();
             }
         });
