@@ -3060,13 +3060,13 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
         display: flex;
         flex-direction: column;
         gap: 20px;
-        margin-top: 15px;
+        margin-top: 20px;
     }
 
     &__inner {
         border-radius: 5px;
         background: var(--color-grey-200);
-        padding: 13px 21px 13px 21px;;
+        padding: 23px 21px 13px 21px;;
     }
 
     &__actions {
@@ -3556,21 +3556,7 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
 
     &__item {
         max-width: 194px;
-        width: 100%;
-        min-width: 170px;
-
-
-        @media (max-width: 1024px) {
-            flex-basis: calc(33.333% - 14px);
-        }
-
-        @media (max-width: 768px) {
-            flex-basis: calc(50% - 8px);
-        }
-
-        @media (max-width: 480px) {
-            flex-basis: calc(50% - 5px);
-        }
+        width: 48%;
     }
 
 
