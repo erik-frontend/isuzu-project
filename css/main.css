@@ -4917,6 +4917,76 @@ body.no-scroll {
     gap: 20px;
   }
 }
+.galleryPopup {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  transition: 0.3s;
+}
+.galleryPopup.active {
+  opacity: 1;
+  visibility: visible;
+}
+.galleryPopup__bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 4;
+}
+.galleryPopup__content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.galleryPopup__slider {
+  width: 100%;
+  max-width: 1200px;
+  height: 80vh;
+}
+.galleryPopup .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.galleryPopup img {
+  width: 430px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.galleryPopup__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: url("../assets/cross.svg") center no-repeat;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+.galleryPopup__prev, .galleryPopup__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 10;
+}
+.galleryPopup__prev {
+  left: 20px;
+}
+.galleryPopup__next {
+  right: 20px;
+}
+
 .checkout {
   padding: 40px 0 80px;
 }

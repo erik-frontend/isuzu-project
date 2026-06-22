@@ -2277,3 +2277,96 @@ body.no-scroll {
         }
     }
 }
+
+
+
+
+
+.galleryPopup {
+    position: fixed;
+    inset: 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 10;
+
+    transition: .3s;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,.9);
+        z-index: 4;
+    }
+
+    &__content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 40px;
+    }
+
+    &__slider {
+        width: 100%;
+        max-width: 1200px;
+        height: 80vh;
+    }
+
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    img {
+        width: 430px;
+        object-fit: contain;
+    }
+
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        width: 40px;
+        height: 40px;
+
+        background: url("../assets/cross.svg") center no-repeat;
+        border: none;
+        cursor: pointer;
+
+        z-index: 10;
+    }
+
+    &__prev,
+    &__next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 50px;
+        height: 50px;
+
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    &__prev {
+        left: 20px;
+    }
+
+    &__next {
+        right: 20px;
+    }
+}

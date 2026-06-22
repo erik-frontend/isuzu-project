@@ -389,13 +389,93 @@ const productDescription = {
     }
 };
 
-productDescription.init();
+
+
+const galleryPopup = {
+    popup: document.querySelector('.galleryPopup'),
+    slider: document.querySelector('.galleryPopup__slider'),
+    closeBtn: document.querySelector('.galleryPopup__close'),
+    bg: document.querySelector('.galleryPopup__bg'),
+
+    swiper: null,
+
+    init() {
+        if (!this.popup || !this.slider) return;
+
+        const slides = document.querySelectorAll(
+            '.productGallery__main .swiper-slide'
+        );
+
+        slides.forEach((slide, index) => {
+            slide.addEventListener('click', () => {
+                this.open(index);
+            });
+        });
+
+        this.closeBtn?.addEventListener('click', () => {
+            this.close();
+        });
+
+        this.bg?.addEventListener('click', () => {
+            this.close();
+        });
+
+        this.popup.addEventListener('click', (e) => {
+
+            const slider = this.popup.querySelector(
+                '.galleryPopup__slider'
+            );
+
+            const closeBtn = this.popup.querySelector(
+                '.galleryPopup__close'
+            );
+
+            if (
+                !slider.contains(e.target) &&
+                !closeBtn.contains(e.target)
+            ) {
+                this.close();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (
+                e.key === 'Escape' &&
+                this.popup.classList.contains('active')
+            ) {
+                this.close();
+            }
+        });
+
+        this.swiper = new Swiper(this.slider, {
+            slidesPerView: 1,
+
+            navigation: {
+                nextEl: '.galleryPopup .swiper-button-next',
+                prevEl: '.galleryPopup .swiper-button-prev'
+            }
+        });
+    },
+
+    open(index) {
+        this.popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        if (this.swiper) {
+            this.swiper.slideTo(index, 0);
+        }
+    },
+
+    close() {
+        this.popup.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+};
+
+
 productGallery.init();
+galleryPopup.init()
+productDescription.init();
 quantityCounter.init();
 productTabs.init();
 reviewsPagination.init();
-// cart.init();
-// quickOrderPopup.init();
-// reviewPopup.init();
-// authPopup.init();
-// registrationPopup.init();
