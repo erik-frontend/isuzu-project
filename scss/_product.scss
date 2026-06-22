@@ -2285,12 +2285,9 @@ body.no-scroll {
 .galleryPopup {
     position: fixed;
     inset: 0;
-
     opacity: 0;
     visibility: hidden;
-
     z-index: 10;
-
     transition: .3s;
 
     &.active {
@@ -2338,10 +2335,8 @@ body.no-scroll {
         position: absolute;
         top: 20px;
         right: 20px;
-
         width: 40px;
         height: 40px;
-
         background: url("../assets/cross.svg") center no-repeat;
         border: none;
         cursor: pointer;
@@ -2354,10 +2349,8 @@ body.no-scroll {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-
         width: 50px;
         height: 50px;
-
         cursor: pointer;
         z-index: 10;
     }
