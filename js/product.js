@@ -448,6 +448,7 @@ const galleryPopup = {
         });
 
         this.swiper = new Swiper(this.slider, {
+            loop: true,
             slidesPerView: 1,
 
             navigation: {
@@ -462,7 +463,7 @@ const galleryPopup = {
         document.body.style.overflow = 'hidden';
 
         if (this.swiper) {
-            this.swiper.slideTo(index, 0);
+            this.swiper.slideToLoop(index, 0);
         }
     },
 
@@ -471,6 +472,7 @@ const galleryPopup = {
         document.body.style.overflow = '';
     }
 };
+
 
 
 productGallery.init();

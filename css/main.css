@@ -2497,6 +2497,9 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
   background: var(--color-grey-200);
   padding: 23px 21px 13px 21px;
 }
+.catalog-sidebar .category {
+  padding: 10px 21px 13px 21px;
+}
 .catalog-sidebar__actions {
   display: flex;
   flex-direction: column;

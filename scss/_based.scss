@@ -3067,7 +3067,11 @@ html:not(.v-mobile) .footer__dev a:focus-visible {
     &__inner {
         border-radius: 5px;
         background: var(--color-grey-200);
-        padding: 23px 21px 13px 21px;;
+        padding: 23px 21px 13px 21px;
+    }
+
+    .category {
+        padding: 10px 21px 13px 21px;
     }
 
     &__actions {
